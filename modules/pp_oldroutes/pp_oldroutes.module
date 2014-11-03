@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * Implements hook_menu
+ */
+function pp_oldroutes_menu() {
+	// translation routes definition
+	$translation_arr = array(
+		'produkty/pvc/kyvna-vrata' => 'produkty/pvc/kyvna_vrata', // vede z plastoveclony.cz - opravit tam
+		
+		'cs/produkty/okenni-folie/bezpecnostni' => 'produkty/folie/bezpecnostni', // vede z foliebezpecnosti.cz - co to je?
+		'cs/produkty/okenni-folie' => 'produkty/folie',
+		'cs/produkty/reklamni-folie' => 'produkty/folie/reklamni',
+		'cs/produkty/okenni-folie/izolacni' => 'produkty/folie/protislunecni',
+		
+		'cs/produkty/lamelove-clony' => 'produkty/pvc/lamelove_clony',
+		'cs/produkty/lamelove-clony/nestandartni' => 'produkty/pvc/lamelove_clony/nestandardni',
+		'cs/produkty/lamelove-clony/standartni' => 'produkty/pvc/lamelove_clony/standardni',
+		'cs/produkty/lamelove-clony/mrazirenske' => 'produkty/pvc/lamelove_clony/mrazirenske',
+		
+		'cs/technicke-parametry/rozmery-pvc' => 'produkty/pvc',
+		
+		'forms-in-frame/1' => 'poptavka',
+		'forms-in-frame/2' => 'poptavka',
+
+		'cs/poptavka' => 'poptavka',
+		'cs/kontakt' => 'o_nas',
+		'cs/o-nas' => 'o_nas',
+
+		'cs/produkty/kyvna-vrata' => 'produkty/pvc/kyvna_vrata',
+		'cs/produkty/mekcene-pvc' => 'produkty/pvc/pasy',
+		'cs/produkty/penene-pvc' => 'produkty/deskove_materialy/dalsi/penene',
+		'cs/produkty/polykarbon' => 'produkty/deskove_materialy/polykarbonat_plny',
+		'cs/produkty/plexisklo' => 'produkty/plexisklo',
+		'cs/produkty' => 'produkty',
+		'cs/index.php' => '<front>',
+
+	);
+
+	// vsechny routy pripravim jako menu callback
+	$out = array();
+	foreach ($translation_arr as $key => $target) {
+		$out[$key] = array(
+			'page callback' => 'drupal_goto',
+			'page arguments' => array($target, array(), '301'),
+			'access arguments' => array('access content'),
+			'type' => MENU_CALLBACK,
+		);
+	}
+
+	return $out;
+}
+

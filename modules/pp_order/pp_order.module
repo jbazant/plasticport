@@ -1,0 +1,251 @@
+<?php 
+/**
+ * @file Poptavkovy formular 
+ */
+
+/**
+ * Implements hook_enable
+ */
+function pp_order_enable() {
+    // vsechny emaily modulu budou posilany pres mimemail
+    mailsystem_set(array(
+        'pp_order' => 'MimeMailSystem',
+    ));
+}
+
+
+/**
+ * Implements hook_disable
+ */
+function pp_order_disable() {
+    mailsystem_clear(array(
+        'pp_order' => 'MimeMailSystem',
+    ));
+}
+
+
+/**
+ * Implements hook_menu
+ */
+function pp_order_menu() {
+    return array(
+        // poptavkovy formular
+        'poptavka' => array(
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('pp_order_form'),
+            'access callback' => TRUE,
+            'title' => 'Poptávka',
+            'file' => 'pp_order.form.inc'
+        ),
+
+        // stranka po uspesnem odeslani formulare
+        'poptavka/podekovani' => array(
+        	'page callback' => 'pp_order_done',
+        	'access callback' => TRUE,
+            'title' => 'Poptávka',
+            'file' => 'pp_order.static_pages.inc'
+        ),
+
+        'poptavka/chyba' => array(
+            'page callback' => 'theme',
+            'page arguments' => array('order_recap_invalid'),
+            'access callback' => TRUE,
+            'title' => t('Chyba při zpracování poptávky'),
+        ),
+
+        // administracni rozhrani
+        'admin/config/pp_order' => array(
+            'title' => 'PP Poptávkový formulář',
+            'description' => 'Administrace konstant pro poptávkový formulář.',
+            'page callback' => 'system_admin_menu_block_page',
+            'access arguments' => array('administer pp_order'),
+            'position' => 'right',
+            'weight' => -40,
+            'type' => MENU_NORMAL_ITEM,
+            'file' => 'system.admin.inc',
+            'file path' => drupal_get_path('module', 'system'),
+        ),
+
+        'admin/config/pp_order/obecne' => array(
+            'title' => 'Obecné nastavení',
+            'description' => 'Obecné nastavení poptávkového formuláře',
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('pp_order_admin_obecne'),
+            'access arguments' => array('administer pp_order'),
+            'file' => 'pp_order.admin.inc',
+            'type' => MENU_NORMAL_ITEM,
+            'weight' => 5,
+        ),
+
+        'admin/config/pp_order/do_otvoru' => array(
+            'title' => 'Lamely do otvoru a nad otvor',
+            'description' => 'Ceny lamel pro uchycení do otvoru a nad otvor',
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('pp_order_admin_do_otvoru'),
+            'access arguments' => array('administer pp_order'),
+            'file' => 'pp_order.admin.inc',
+            'type' => MENU_NORMAL_ITEM,
+            'weight' => 10,
+        ),
+
+        'admin/config/pp_order/predsunute' => array(
+            'title' => 'Lamely předsunuté, posuvné a shrnovací',
+            'description' => 'Ceny lamel pro předsunuté, posuvné a shrnovací lamely',
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('pp_order_admin_predsunute'),
+            'access arguments' => array('administer pp_order'),
+            'file' => 'pp_order.admin.inc',
+            'type' => MENU_NORMAL_ITEM,
+            'weight' => 15,
+        ),
+
+        'admin/config/pp_order/listy' => array(
+            'title' => 'Lišty a zavěšení',
+            'description' => 'Ceny lišt a zavěšení',
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('pp_order_admin_listy'),
+            'access arguments' => array('administer pp_order'),
+            'file' => 'pp_order.admin.inc',
+            'type' => MENU_NORMAL_ITEM,
+            'weight' => 20,
+        ),
+
+        'admin/config/pp_order/montaz' => array(
+            'title' => 'Montáž a doprava',
+            'description' => 'Cena montáže a dopravy',
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('pp_order_admin_montaz'),
+            'access arguments' => array('administer pp_order'),
+            'file' => 'pp_order.admin.inc',
+            'type' => MENU_NORMAL_ITEM,
+            'weight' => 25,
+        ),
+
+        'admin/config/pp_order/test' => array(
+            'title' => 'Test výpočtu',
+            'description' => 'Test výpočtu pro jednotlivé typy',
+            'page callback' => 'pp_order_test_form',
+            'access arguments' => array('administer pp_order'),
+            'file' => 'pp_order.form.inc',
+            'type' => MENU_NORMAL_ITEM,
+            'weight' => 25,
+        ),
+    );
+}
+
+
+/**
+ * Implements hook_theme
+ * @return array
+ */
+function pp_order_theme() {
+    return array(
+        'order_recap_lamels' => array(
+            'template' => 'templates/pp_order_recap_lamels',
+            'file' => 'pp_order.recap.inc',
+            'variables' => array(),
+        ),
+        'order_recap_doors' => array(
+            'template' => 'templates/pp_order_recap_doors',
+            'file' => 'pp_order.recap.inc',
+            'variables' => array(),
+        ),
+        'order_recap_other' => array(
+            'template' => 'templates/pp_order_recap_other',
+            'file' => 'pp_order.recap.inc',
+            'variables' => array(),
+        ),
+        'order_recap_invalid' => array(
+            'template' => 'templates/pp_order_recap_invalid',
+            'file' => 'pp_order.recap.inc',
+            'variables' => array(),
+        ),
+    );
+}
+
+
+/**
+ * Implements hook_mail
+ * @param string $key
+ * @param array $message
+ * @param array $params
+ */
+function pp_order_mail($key, &$message, $params) {
+    switch($key) {
+        case 'poptavka_lamela_rekapitulace':
+        case 'poptavka_lamela_nova':
+            $tpl = 'order_recap_lamels';
+            break;
+
+        case 'poptavka_kyvna_nova':
+            $tpl = 'order_recap_doors';
+            break;
+
+        case 'poptavka_jine_nova':
+            $tpl = 'order_recap_other';
+            break;
+    }
+
+    if (isset($tpl)) {
+        $message['subject'] = $params['email_subject'];
+        $message['body'] = array(
+            '#markup' => theme($tpl, $params['body_data'])
+        );
+        $message['headers']['Content-type'] = 'text/html';
+    }
+}
+
+
+/**
+ * Funkce pro zalozeni objednavky jako node
+ * Predane email_body je povazovano za full html
+ *
+ * @param string $email_body
+ * @param string $title
+ */
+function _pp_order_save_htmlmail_as_node($email_body, $title)
+{
+    $node = new stdClass();
+    $node->type = 'poptavka_zakladni';
+    $node->title = $title;
+    node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
+    $node->language = LANGUAGE_NONE; // Or e.g. 'en' if locale is enabled
+    //$node->uid = $user->uid;
+    $node->status = 0; //(1 or 0): published or not
+    $node->promote = 0; //(1 or 0): promoted to front page
+    $node->comment = 1; //2 = comments on, 1 = comments off
+
+    $node->body[$node->language][0]['value'] = $email_body;
+    $node->body[$node->language][0]['format'] = 'full_html';
+
+    $node = node_submit($node); // Prepare node for saving
+    node_save($node);
+}
+
+
+/**
+ * Vrati nadpis emailu / node pro interni pouziti
+ * @param string $typ
+ * @param string $osoba
+ * @param float|NULL $cena
+ * @return string
+ */
+function _pp_order_get_email_subject($typ, $spolecnost, $osoba, $cena = NULL) {
+    $zdroj = check_plain(empty($spolecnost) ? $osoba : $spolecnost);
+
+    if (isset($cena) && $cena > 0) {
+        return sprintf(
+            'Poptávka %s od %s cena %s Kč',
+            $typ,
+            $zdroj,
+            number_format($cena, 2, ',', ' ')
+        );
+    }
+    else {
+        return sprintf(
+            'Poptávka %s od %s - nacenit',
+            $typ,
+            $zdroj
+        );
+    }
+}

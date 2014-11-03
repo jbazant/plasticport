@@ -1,0 +1,11 @@
+name = PP order module
+description = "Order form and mailing"
+package = PP
+core = 7.x
+
+dependencies[] = mimemail
+dependencies[] = mimemail_compress
+
+stylesheets[all][] = pp_order.css
+
+configure = admin/config/pp_order

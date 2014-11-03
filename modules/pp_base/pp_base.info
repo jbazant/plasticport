@@ -1,0 +1,9 @@
+name = PP base module
+description = "Base module defining blocks"
+package = PP
+core = 7.x
+;files[] = aggregator.test
+;configure = admin/config/services/aggregator/settings
+;stylesheets[all][] = aggregator.css
+
+dependencies[] = spamspan

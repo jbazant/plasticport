@@ -1,0 +1,8 @@
+name = PP translate old routes
+description = "Translate links to old pages to new ones"
+package = PP
+core = 7.x
+;files[] = aggregator.test
+;configure = admin/config/services/aggregator/settings
+;stylesheets[all][] = aggregator.css
+dependencies[] = pp_base

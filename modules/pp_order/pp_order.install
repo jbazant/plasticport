@@ -1,0 +1,93 @@
+<?php
+
+
+/**
+ * Nastaveni konstant
+ */
+function pp_order_install() {
+    // konstanty pro montaze do otvoru a nad otvor
+    variable_set('pp_order_v1_lamela_200', 70);
+    variable_set('pp_order_v1_lamela_300', 145);
+    variable_set('pp_order_v1_lamela_400', 245);
+    variable_set('pp_order_lista_zaklad', 800);
+
+    // predsunuta + posuvna a shrnovaci
+    variable_set('pp_order_predsunuta_stojna', 350);
+    variable_set('pp_order_v2_marze_male', 0.8775);
+    variable_set('pp_order_v2_marze_velke', 0.8385);
+    variable_set('pp_order_v2_lamely_200_50', 1100);
+    variable_set('pp_order_v2_lamely_300_50', 1200);
+    variable_set('pp_order_v2_lamely_400_50', 1350);
+
+    // listy pro shrnovaci a posuvne lamely. Jinak plati cenik v2
+    variable_set('pp_order_lista_posuvna', 1500);
+    variable_set('pp_order_lista_shrnovaci', 2400);
+
+    //obecne nastaveni
+    variable_set('pp_order_email_poptavky', 'info@plasticport.cz');
+    variable_set('pp_order_tel_poptavky', '+420 731 566 609');
+
+    // mrazirenske clony
+    variable_set('pp_order_v1_lamela_200_mrazirenska', 85);
+    variable_set('pp_order_v1_lamela_300_mrazirenska', 200);
+    variable_set('pp_order_v1_lamela_400_mrazirenska', 300);
+    variable_set('pp_order_v2_lamely_mrazirenske', 1.1);
+
+    // montaz a doprava
+    variable_set('pp_order_montaz_pod_5m', 2490);
+    variable_set('pp_order_montaz_nad_5m', 3490);
+    variable_set('pp_order_doprava', 10);
+}
+
+
+/**
+ * Implements hook_uninstall
+ */
+function pp_order_uninstall() {
+    // konstanty pro montaze do otvoru a nad otvor
+    variable_del('pp_order_v1_lamela_200');
+    variable_del('pp_order_v1_lamela_300');
+    variable_del('pp_order_v1_lamela_400');
+    variable_del('pp_order_lista_zaklad');
+
+    // predsunuta + posuvna a shrnovaci
+    variable_del('pp_order_predsunuta_stojna');
+    variable_del('pp_order_v2_marze_male');
+    variable_del('pp_order_v2_marze_velke');
+    variable_del('pp_order_v2_lamely_200_50');
+    variable_del('pp_order_v2_lamely_300_50');
+    variable_del('pp_order_v2_lamely_400_50');
+
+    // listy pro shrnovaci a posuvne lamely. Jinak plati cenik v2
+    variable_del('pp_order_lista_posuvna');
+    variable_del('pp_order_lista_shrnovaci');
+
+    //obecne nastaveni
+    variable_del('pp_order_email_poptavky');
+    variable_del('pp_order_tel_poptavky');
+
+    // mrazirenske clony
+    variable_del('pp_order_v1_lamela_200_mrazirenska');
+    variable_del('pp_order_v1_lamela_300_mrazirenska');
+    variable_del('pp_order_v1_lamela_400_mrazirenska');
+    variable_del('pp_order_v2_lamely_mrazirenske');
+
+    // montaz a doprava
+    variable_del('pp_order_montaz_pod_5m');
+    variable_del('pp_order_montaz_nad_5m');
+    variable_del('pp_order_doprava');
+}
+
+
+/**
+ * Update module variables default settings
+ */
+function pp_order_update_7200() {
+    pp_order_install();
+}
+
+function pp_order_update_7201() {
+    variable_set('pp_order_montaz_pod_5m', 2490);
+    variable_set('pp_order_montaz_nad_5m', 3490);
+    variable_set('pp_order_doprava', 10);
+}
