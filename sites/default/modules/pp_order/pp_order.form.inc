@@ -462,9 +462,12 @@ function pp_order_form_submit($form, &$form_state) {
             );
         }
 
-        $counted_data['construction_price'] = _pp_order_count_construction_price($counted_data['counted_height'], $counted_data['counted_width']);
+        $counted_data['construction_price'] = _pp_order_count_construction_price(
+            $counted_data['counted_height'],
+            $counted_data['counted_width']
+        );
 
-        $counted_data_ext['transfer_price'] = variable_get('pp_order_doprava', 10);
+        $counted_data['transfer_price'] = variable_get('pp_order_doprava', 10);
 
         if (empty($counted_data['construction_price'])) {
             $counted_data['is_valid'] = FALSE;
@@ -472,8 +475,9 @@ function pp_order_form_submit($form, &$form_state) {
         
         $template_data = array(
             'form' => $form_state['values'],
-            'price' => $counted_data_ext,
+            'price' => $counted_data,
         );
+        watchdog ('pp_order', 'Data:' . json_encode($template_data));
 
         _pp_order_lamel_order_process($template_data, $counted_data['is_valid']);
 
@@ -1108,16 +1112,16 @@ function _pp_order_test_v2_helper($zaveseni, $lista, &$ret, $heating) {
 }
 
 
-function _pp_order_count_construction_price($width, $height) {
+function _pp_order_count_construction_price($height, $width) {
     $ret = NULL;
     if(isset($width) && isset($height)) {
         $lamel_size = $width * $height;
 
         if ($lamel_size <= 50000) { // < 5m2
-            $ret = variable_set('pp_order_montaz_pod_5m', 2490);
+            $ret = variable_get('pp_order_montaz_pod_5m', 2490);
         }
         elseif ($lamel_size <= 180000) { // < 18m2
-            $ret = variable_set('pp_order_montaz_nad_5m', 3490);
+            $ret = variable_get('pp_order_montaz_nad_5m', 3490);
         }
     }
 

@@ -158,7 +158,7 @@ function template_process_order_recap_lamels(&$variables) {
     }
 
     if (isset($variables['price']['final_price']) && isset($variables['price']['construction_price'])) {
-        $variables['cena_celkem'] = number_format(
+        $variables['celkova_cena'] = number_format(
                 $variables['price']['construction_price'] + $variables['price']['final_price'], 2, ',', ' '
             ) . ' Kč'
         ;
