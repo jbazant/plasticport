@@ -193,6 +193,42 @@ function pp_order_mail($key, &$message, $params) {
         );
         $message['headers']['Content-type'] = 'text/html';
     }
+//    function mymodule_mail($key, &$message, $params) {
+//        $data['user'] = $params['from'];
+//        $account = $data['user']->name;
+//
+//        $file_content = file_get_contents('some/file/path');
+//
+//        $attachments = array(
+//            'filecontent' => $file_content,
+//            'filename' => 'example-' . $account,
+//            'filemime' => 'application/pdf',
+//        );
+//
+//        switch($key) {
+//            case 'notice':
+//
+//                $langcode = $message['language']->language;
+//                $message = drupal_mail($module, $key, $to, $language, $params, $from, $send);
+//                $message['subject'] = 'example submission from '. $account;
+//                $message['body'][] =
+//                    '<p>'. $account .' has submitted an example.</p>';
+//                $message['params']['attachments'][] = $attachments;
+//                $system = drupal_mail_system($module, $key);
+//                // Format the message body.
+//                $message = $system->format($message);
+//                // Send e-mail.
+//                $message['result'] = $system->mail($message);
+//
+//                if($message['result'] == TRUE) {
+//                    drupal_set_message(t('Your message has been sent.'));
+//                }
+//                else{
+//                    drupal_set_message(t('There was a problem sending your message and it was not     sent.'), 'error');
+//                }
+//                break;
+//        }
+//    }
 }
 
 
