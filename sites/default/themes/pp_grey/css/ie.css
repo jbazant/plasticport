@@ -1,0 +1,13 @@
+#main-menu li a.active,
+#main-menu li a:hover,
+#main-menu li a:active {
+	background: #f1da36 url('../gfx/menu_back_active.jpg') repeat-x right top;
+}
+
+#header {
+	background: #f1da36 url('../gfx/menu_back.jpg') repeat-x right top;
+} 
+
+.products_preview {
+	background: #f1da36 url('../gfx/box.jpg') repeat-x right top;
+}
