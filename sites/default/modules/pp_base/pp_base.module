@@ -113,12 +113,18 @@ function pp_base_block_view($delta = '') {
 					array(
 						'heading' => 'Zakázková výroba',
 						'description' => '',
-						'target' => 'produkty'
+						'target' => 'zakazkova-vyroba',
 					),
 					
 				),
 				'#slideshow_class' => 'homepage_slides'
 			);
+			break;
+		case 'pp_footer':
+			$block['content'] = array(
+				'#markup' => '<p><strong>Prodejna:</strong><br />Spojenecká ul. 764,<br />415 01 Teplice<br />(u Intersparu, vjezd pod Okna Sulko)</p>',
+			);
+			break;
 			break;
 	}
 	

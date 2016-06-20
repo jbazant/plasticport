@@ -1,0 +1,16 @@
+; basic specification
+name = PP Blue
+description = Responsive blue pp design.
+core = 7.x
+
+; stylesheets
+stylesheets[all][] = css/main.css
+stylesheets[all][] = css/extras.css
+
+; javascript
+scripts[] = js/main.js
+
+; regions
+regions[content] = Content
+regions[featured] = Featured
+regions[featured] = Featured

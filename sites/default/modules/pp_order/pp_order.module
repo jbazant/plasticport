@@ -40,10 +40,10 @@ function pp_order_menu() {
 
         // stranka po uspesnem odeslani formulare
         'poptavka/podekovani' => array(
-        	'page callback' => 'pp_order_done',
-        	'access callback' => TRUE,
+            'page callback' => 'theme',
+            'page arguments' => array('order_done'),
+            'access callback' => TRUE,
             'title' => 'Poptávka',
-            'file' => 'pp_order.static_pages.inc'
         ),
 
         'poptavka/chyba' => array(
@@ -158,6 +158,10 @@ function pp_order_theme() {
         'order_recap_invalid' => array(
             'template' => 'templates/pp_order_recap_invalid',
             'file' => 'pp_order.recap.inc',
+            'variables' => array(),
+        ),
+        'order_done' => array(
+            'template' => 'templates/pp_order_done',
             'variables' => array(),
         ),
     );
