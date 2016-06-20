@@ -1,0 +1,10 @@
+section.l-detail a {
+    color: #ae003c;
+    text-decoration: underline;
+}
+section.l-detail a:hover {
+    text-decoration: none;
+}
+.l-detail__list {
+    font-weight: normal;
+}

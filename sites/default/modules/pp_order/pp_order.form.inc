@@ -45,6 +45,8 @@ function pp_order_form($form, $form_state)
         '#element_validate' => array('pp_order_element_validate_antispam'),
     );
 
+    $form['#prefix'] = '<section class="l-order-form">';
+    $form['#suffix'] = '</section>';
     // vratim kompletni formular
     return $form;
 }
@@ -353,6 +355,8 @@ function _pp_order_finish_fieldset()
     $fieldset['submit'] = array(
         '#type' => 'submit',
         '#value' => t('Odeslat'),
+        '#prefix' => '<div class="form-actions">',
+        '#suffix' => '</div>',
     );
 
     return $fieldset;

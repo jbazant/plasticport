@@ -4,14 +4,6 @@
     margin: 10px;
     
     position: relative;
-    
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    
-    -moz-box-shadow: 0 0 10px #666;
-    -webkit-box-shadow: 0 0 10px #666;
-    box-shadow: 0 0 10px #666;
 }
 
 .slideshow_images div {
@@ -25,9 +17,9 @@
     
     display: none;
 	
-	-moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+    /*-moz-border-radius: 10px;*/
+    /*-webkit-border-radius: 10px;*/
+    /*border-radius: 10px;*/
 }
 
 .slideshow_images a {
