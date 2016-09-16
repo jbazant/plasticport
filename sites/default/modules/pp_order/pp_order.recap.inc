@@ -140,6 +140,7 @@ function template_process_order_recap_lamels(&$variables) {
             break;
         case 'collapsible':
             $sTmp = t('Shrnovací');
+            break;
 
         default:
             $sTmp = t('Neuvedena');

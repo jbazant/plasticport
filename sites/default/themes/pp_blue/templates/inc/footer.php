@@ -11,9 +11,12 @@
     <div class="container">
         <div class="row">
             <div class="col--footer">
-                <h3 class="l-footer__heading">Kontakt:</h3>
-                <p>Telefon: <a href="tel:+420731566609">+420 731 566 609</a></p>
-                <p>Email: <?= spamspan('info@plasticport.cz') ?></p>
+                <div class="h-card">
+                    <h3 class="l-footer__heading">Kontakt:</h3>
+                    <div class="p-name">Jaroslav Bažant</div>
+                    <div>Telefon: <a class="p-tel" href="tel:+420731566609">+420 731 566 609</a></div>
+                    <p>Email: <span class="u-email"><?= spamspan('info@plasticport.cz') ?></span></p>
+                </div>
             </div>
             <div class="col--footer">
                 <h3 class="l-footer__heading">Fakturační údaje:</h3>

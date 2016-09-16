@@ -45,7 +45,7 @@ function pp_order_form($form, $form_state)
         '#element_validate' => array('pp_order_element_validate_antispam'),
     );
 
-    $form['#prefix'] = '<section class="l-order-form">';
+    $form['#prefix'] = '<section class="l-order-form"><h2 class="heading--primary">Poptávkový formulář</h2>';
     $form['#suffix'] = '</section>';
     // vratim kompletni formular
     return $form;

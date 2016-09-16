@@ -58,8 +58,15 @@ function pp_base_block_view($delta = '') {
 			
 		case 'pp_contact_phone':
 			$block['content'] = array(
-				'#markup' => spamspan('<p><strong>Telefon:</strong> +420 731 566 609</p><p><strong>Email:</strong> <span class="spamspan"><span class="u">info</span> [at] <span class="d">plasticport [dot] cz</span></span></p>'),
+				'#markup' => spamspan('
+<div class="h-card">
+    <div class="p-name">Jaroslav Bažant</div>
+    <div><strong>Telefon:</strong> <span clas="p-tel">+420 731 566 609</span></div>
+    <div><strong>Email:</strong> <span class="spamspan"><span class="u">info</span> [at] <span class="d">plasticport [dot] cz</span></div>
+</div>
+'),
 			);
+//            <p><strong>Email:</strong> <span class="spamspan"><span class="u">info</span> [at] <span class="d">plasticport [dot] cz</span></span>
 			break;
 
         case 'pp_fb_like_simple':

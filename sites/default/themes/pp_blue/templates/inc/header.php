@@ -13,7 +13,6 @@
         <?php if ($main_menu): ?>
         <nav class="nav">
             <div class="nav__helper">
-                <ul class="nav__list">
                     <?php print theme('links__system_main_menu', array(
                         'links' => $main_menu,
                         'attributes' => array(
@@ -26,7 +25,6 @@
                             'class' => array('element-invisible'),
                         ),
                     )); ?>
-                </ul>
             </div>
             <div class="menu">
                 <svg width="35" height="28" viewbox="0 0 23 17.5" class="icon">
