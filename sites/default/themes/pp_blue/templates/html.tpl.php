@@ -52,7 +52,6 @@
     <title><?php print $head_title; ?></title>
     <?php print $styles; ?>
     <script>document.createElement("picture")</script>
-    <script src="/js/vendor/picturefill.min.js" async></script>
 </head>
 <body>
 <div id="skip-link">
