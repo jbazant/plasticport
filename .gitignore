@@ -41,3 +41,4 @@ xmlrpc.php
 /node_modules
 /www.plasticport.loc.crt
 /www.plasticport.loc.key
+!/.htaccess
