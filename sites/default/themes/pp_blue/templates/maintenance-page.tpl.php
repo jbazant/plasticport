@@ -1,17 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jiri.bazant
- * Date: 10.06.16
- * Time: 7:43
- */
-$theme_path = drupal_get_path('theme', 'pp_blue');
-
-include($theme_path . '/templates/inc/header.php');
-?>
-
+<?php $theme_path = drupal_get_path('theme', 'pp_blue'); ?>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php print $head; ?>
+    <title><?php print $head_title; ?></title>
+    <?php print $styles; ?>
+    <script>document.createElement("picture");</script>
+</head>
+<body>
+<?php include($theme_path . '/templates/inc/header.php'); ?>
 <main id="content">
-
     <div class="info-strip">
         <div class="info-strip__top">
             <div class="container">
@@ -32,19 +32,12 @@ include($theme_path . '/templates/inc/header.php');
             <div class="section clearfix">
                 <?php print $messages; ?>
             </div>
-        </div> <!-- /.section, /#messages -->
+        </div>
     <?php endif; ?>
 
-    <?php if ($page['featured']): ?>
-        <div id="featured">
-            <div class="section clearfix">
-                <?php print render($page['featured']); ?>
-            </div>
-        </div> <!-- /.section, /#featured -->
-    <?php endif; ?>
-    <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
-    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-    <?php print render($page['content']); ?>
+    <section class="l-maintenance"><?php print $content ?></section>
 </main>
-
 <?php include($theme_path . '/templates/inc/footer.php'); ?>
+<?php print $scripts; ?>
+</body>
+</html>

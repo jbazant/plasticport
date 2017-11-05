@@ -11,6 +11,7 @@ include($theme_path . '/templates/inc/header.php');
 ?>
 
 <main id="content">
+    <h1 class="heading--hp">Brána do světa plastů</h1>
 
     <section class="l-home-nav">
         <a href="<?= url('/zakazkova-vyroba') ?>" class="l-home-nav__item">

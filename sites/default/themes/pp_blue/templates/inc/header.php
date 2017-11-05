@@ -8,7 +8,7 @@
 ?>
 <header class="l-header">
     <div class="container">
-        <a href="<?= url('/') ?>" class="logo"><h1>Plastic Port</h1></a>
+        <a href="<?= url('/') ?>" class="logo"><span>Plastic Port</span></a>
 
         <?php if ($main_menu): ?>
         <nav class="nav">
@@ -21,7 +21,7 @@
                         ),
                         'heading' => array(
                             'text' => t('Main menu'),
-                            'level' => 'h2',
+                            'level' => 'h4',
                             'class' => array('element-invisible'),
                         ),
                     )); ?>

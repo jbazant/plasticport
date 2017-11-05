@@ -6,7 +6,6 @@ sites/*/*settings*.php
 
 # Ignore paths that contain generated content.
 files/
-sites/*/files
 sites/*/private
 
 # Ignore default text files
@@ -40,3 +39,5 @@ xmlrpc.php
 
 .idea
 /node_modules
+/www.plasticport.loc.crt
+/www.plasticport.loc.key

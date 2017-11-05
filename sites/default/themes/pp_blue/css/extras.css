@@ -9,6 +9,15 @@ section.l-detail a:hover {
     font-weight: normal;
 }
 
+.heading--hp {
+    display: none;
+}
+
+.l-maintenance {
+    margin: 50px 20px;
+    color: black;
+}
+
 @media only screen and (min-width: 800px) {
     .l-home-content {
         padding: 60px 0;

@@ -47,6 +47,11 @@ function pp_order_form($form, $form_state)
 
     $form['#prefix'] = '<section class="l-order-form"><h2 class="heading--primary">Poptávkový formulář</h2>';
     $form['#suffix'] = '</section>';
+
+    if (time() < strtotime('2017-02-20')) {
+        $form['#prefix'] .= '<p><strong>Z důvodu dovolené budou poptávky z období 14.2. - 29.2. odbaveny až následující týden!</strong></p>';
+    }
+
     // vratim kompletni formular
     return $form;
 }
