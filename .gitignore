@@ -42,3 +42,4 @@ xmlrpc.php
 /www.plasticport.loc.crt
 /www.plasticport.loc.key
 !/.htaccess
+/sites/all/modules/
