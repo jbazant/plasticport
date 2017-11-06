@@ -48,11 +48,10 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src https:">
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
     <?php print $styles; ?>
-    <script>document.createElement("picture")</script>
+    <script>document.createElement("picture");</script>
 </head>
 <body>
 <div id="skip-link">

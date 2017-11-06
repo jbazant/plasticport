@@ -7,7 +7,6 @@
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
     <?php print $styles; ?>
-    <script>document.createElement("picture");</script>
 </head>
 <body>
 <?php include($theme_path . '/templates/inc/header.php'); ?>
