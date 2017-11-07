@@ -34,7 +34,7 @@ function pp_order_menu() {
             'page callback' => 'drupal_get_form',
             'page arguments' => array('pp_order_form'),
             'access callback' => TRUE,
-            'title' => 'Poptávka',
+            'title' => 'Poptávkový formulář',
             'file' => 'pp_order.form.inc'
         ),
 

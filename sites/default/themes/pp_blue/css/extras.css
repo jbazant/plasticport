@@ -18,6 +18,14 @@ section.l-detail a:hover {
     color: black;
 }
 
+.fancy-box a {
+    text-decoration: underline;
+}
+
+li a.active {
+    color: #ae003c;
+}
+
 @media only screen and (min-width: 800px) {
     .l-home-content {
         padding: 60px 0;
