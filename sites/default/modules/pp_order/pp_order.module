@@ -43,7 +43,7 @@ function pp_order_menu() {
             'page callback' => 'theme',
             'page arguments' => array('order_done'),
             'access callback' => TRUE,
-            'title' => 'Poptávka',
+            'title' => 'Poptávka odeslána',
         ),
 
         'poptavka/chyba' => array(
@@ -164,6 +164,11 @@ function pp_order_theme() {
             'template' => 'templates/pp_order_done',
             'variables' => array(),
         ),
+        'block_call_to_action' => array(
+            'template' => 'templates/block_call_to_action',
+            'variables' => array(),
+
+        )
     );
 }
 
@@ -287,5 +292,49 @@ function _pp_order_get_email_subject($typ, $spolecnost, $osoba, $cena = NULL) {
             $typ,
             $zdroj
         );
+    }
+}
+
+
+/**
+ * Alter meta tags from
+ * @param $output
+ * @param $instance
+ * @param $options
+ */
+function pp_order_metatag_metatags_view_alter(&$output, $instance, $options) {
+    $currPath = current_path();
+
+    if ($currPath === 'poptavka') {
+        // todo move to admin
+        $description = 'Scháníte lamelové clony, kdyvná vrata, nebo plastové desky? Zašlete nám nezávaznou poptávku!';
+
+        $output['og:description']['#attached']['drupal_add_html_head'][0][0]['#value'] = $description;
+        $output['description']['#attached']['drupal_add_html_head'][0][0]['#value'] = $description;
+    }
+    elseif ($currPath === 'poptavka/podekovani' || $currPath === 'poptavka/chyba') {
+        $output['robots']['#attached']['drupal_add_html_head'][0][0]['#value'] = 'noindex, follow';
+    }
+}
+
+
+function pp_order_block_info() {
+    return array(
+        'call_to_action' => array(
+            'info' => t('Call to action'),
+            'cache' => DRUPAL_CACHE_PER_PAGE,
+        ),
+    );
+}
+
+function pp_order_block_view($delta = '') {
+    switch ($delta) {
+        case 'call_to_action':
+            return array(
+                'subject' => NULL,
+                'content' => array(
+                    '#theme' => 'block_call_to_action'
+                )
+            );
     }
 }

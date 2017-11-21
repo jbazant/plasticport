@@ -5,7 +5,6 @@
  * Date: 10.06.16
  * Time: 7:39
  */
-// todo spamspan
 ?>
 <footer class="l_footer">
     <div class="container">

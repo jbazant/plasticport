@@ -2,9 +2,11 @@ section.l-detail a {
     color: #ae003c;
     text-decoration: underline;
 }
+
 section.l-detail a:hover {
     text-decoration: none;
 }
+
 .l-detail__list {
     font-weight: normal;
 }
@@ -36,6 +38,7 @@ li a.active {
     .l-header {
         padding: 30px 0;
     }
+
     .nav {
         margin: 15px 0 0 0;
     }
@@ -45,7 +48,38 @@ li a.active {
     .l-header {
         padding: 20px 0 20px 0;
     }
+
     .nav {
-         margin: 50px 0 0 0;
+        margin: 50px 0 0 0;
+    }
+}
+
+/* call to action block (from pp_order) */
+.call-to-action {
+    margin: 10px;
+    background: transparent url('../img/png/p-blue.png') no-repeat left center;
+    padding: 30px 80px;
+    min-height: 133px;
+}
+
+.call-to-action p {
+    margin: 10px;
+    color: #00478D;
+    -webkit-font-smoothing: auto;
+}
+
+.call-to-action a {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.call-to-action .page-title {
+    font-style: italic;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 800px) {
+    .call-to-action {
+        margin: 10px 10px 60px 380px;
     }
 }

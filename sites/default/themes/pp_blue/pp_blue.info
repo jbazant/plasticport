@@ -14,4 +14,4 @@ scripts[] = js/main.js
 ; regions
 regions[content] = Content
 regions[featured] = Featured
-regions[featured] = Featured
+regions[footer] = Footer
