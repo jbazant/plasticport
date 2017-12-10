@@ -7,6 +7,24 @@
  */
 
 /**
+ * @implements hook_theme
+ * @return array
+ */
+function pp_blue_theme() {
+    $items = array();
+    // create custom user-login.tpl.php
+    $items['user_login'] = array(
+        'render element' => 'form',
+        'path' => drupal_get_path('theme', 'pp_blue') . '/templates',
+        'template' => 'user-login',
+//        'preprocess functions' => array(
+//            'pp_blue_preprocess_user_login'
+//        ),
+    );
+    return $items;
+}
+
+/**
  * Breadcrumbs as unordered list
  */
 function pp_blue_breadcrumb($variables) {
