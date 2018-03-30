@@ -49,7 +49,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php print $head; ?>
-    <title><?php print $head_title; ?></title>
+    <title><?php print $head_title; ?> | PlasticPort</title>
     <?php print $styles; ?>
     <script>document.createElement("picture");</script>
 </head>
