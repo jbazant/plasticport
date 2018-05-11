@@ -28,6 +28,10 @@ li a.active {
     color: #ae003c;
 }
 
+.product-card__img img {
+    position: relative;
+}
+
 .product-card__content a:hover {
     text-decoration: underline;
 }
@@ -55,22 +59,6 @@ li a.active {
 
     .nav {
         margin: 50px 0 0 0;
-    }
-}
-
-@media only screen and (min-width: 550px) {
-    .product-card__img .field-content {
-        width: 100%;
-        padding-top: 100%;
-        position: relative;
-    }
-
-    .product-card__img a {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
     }
 }
 
