@@ -17,6 +17,7 @@ sites/*/private
 /UPGRADE.txt
 /README.txt
 sites/all/README.txt
+/sites/all/libraries/README.txt
 sites/all/modules/README.txt
 sites/all/themes/README.txt
 
@@ -42,3 +43,5 @@ xmlrpc.php
 /www.plasticport.loc.key
 !/.htaccess
 /sites/all/modules/
+/static/
+/google*.html
