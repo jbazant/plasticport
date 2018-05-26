@@ -64,6 +64,13 @@ section.l-order-form .form-actions {
   text-align: right;
   padding-right: 5%;
 }
+section.l-order-form a {
+  color: #ae003c;
+  text-decoration: underline;
+}
+section.l-order-form a:hover {
+  text-decoration: none;
+}
 @media only screen and (min-width: 800px) {
   section.l-order-form .fieldset-legend {
     padding: 30px 0 0 0;
@@ -76,7 +83,8 @@ section.l-order-form .form-actions {
     width: 50%;
     float: left;
   }
-  section.l-order-form .form-type-textarea.form-item {
+  section.l-order-form .form-item.form-type-textarea,
+  section.l-order-form .form-item.form-item-privacy-agreement {
     width: 95%;
   }
   section.l-order-form input {

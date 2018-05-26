@@ -1,93 +1,75 @@
 section.l-detail a {
-    color: #ae003c;
-    text-decoration: underline;
+  color: #ae003c;
+  text-decoration: underline;
 }
-
 section.l-detail a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
-
 .l-detail__list {
-    font-weight: normal;
+  font-weight: normal;
 }
-
 .heading--hp {
-    display: none;
+  display: none;
 }
-
 .l-maintenance {
-    margin: 50px 20px;
-    color: black;
+  margin: 50px 20px;
+  color: black;
 }
-
 .fancy-box a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 li a.active {
-    color: #ae003c;
+  color: #ae003c;
 }
-
 .product-card__img img {
-    position: relative;
+  position: relative;
 }
-
 .product-card__content a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 @media only screen and (min-width: 800px) {
-    .l-home-content {
-        padding: 60px 0;
-    }
+  .l-home-content {
+    padding: 60px 0;
+  }
 }
-
 @media only screen and (min-width: 900px) {
-    .l-header {
-        padding: 30px 0;
-    }
-
-    .nav {
-        margin: 15px 0 0 0;
-    }
+  .l-header {
+    padding: 30px 0;
+  }
+  .nav {
+    margin: 15px 0 0 0;
+  }
 }
-
 @media only screen and (min-width: 1200px) {
-    .l-header {
-        padding: 20px 0 20px 0;
-    }
-
-    .nav {
-        margin: 50px 0 0 0;
-    }
+  .l-header {
+    padding: 20px 0 20px 0;
+  }
+  .nav {
+    margin: 50px 0 0 0;
+  }
 }
-
 /* call to action block (from pp_order) */
 .call-to-action {
-    margin: 10px;
-    background: transparent url('../img/png/p-blue.png') no-repeat left center;
-    padding: 30px 80px;
-    min-height: 133px;
+  margin: 10px;
+  background: transparent url('../img/png/p-blue.png') no-repeat left center;
+  padding: 30px 80px;
+  min-height: 133px;
 }
-
 .call-to-action p {
-    margin: 10px;
-    color: #00478D;
-    -webkit-font-smoothing: auto;
+  margin: 10px;
+  color: #00478D;
+  -webkit-font-smoothing: auto;
 }
-
 .call-to-action a {
-    text-decoration: underline;
-    font-weight: bold;
+  text-decoration: underline;
+  font-weight: bold;
 }
-
 .call-to-action .page-title {
-    font-style: italic;
-    font-weight: bold;
+  font-style: italic;
+  font-weight: bold;
 }
-
 @media only screen and (min-width: 800px) {
-    .call-to-action {
-        margin: 10px 10px 60px 380px;
-    }
+  .call-to-action {
+    margin: 10px 10px 60px 380px;
+  }
 }

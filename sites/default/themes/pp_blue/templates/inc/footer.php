@@ -26,7 +26,8 @@
                 <address>Spojenecká ul. 764, <br>415 01 Teplice, <br>(u OC Albert, vjezd pod Okna Sulko)</address>
             </div>
             <div class="col--footer">
-                <p><?= l('mapa stránek', 'sitemap.xml') ?></p>
+                <p><?= l('Mapa stránek', 'sitemap.xml') ?></p>
+                <p><?= l('Ocharana osobních údajů', '/prohlaseni-o-ochrane-osobnich-udaju') ?></p>
 
                 <p>Copyright &#169; Jaroslav Bažant</p>
             </div>

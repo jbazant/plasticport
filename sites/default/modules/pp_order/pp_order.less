@@ -83,6 +83,14 @@ section.l-order-form {
         padding-right: 5%;
     }
 
+    a {
+        color: #ae003c;
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
     @media only screen and (min-width: 800px) {
         .fieldset-legend {
             padding: 30px 0 0 0;
@@ -95,9 +103,9 @@ section.l-order-form {
         .form-item {
             width: 50%;
             float: left;
-        }
-        .form-type-textarea.form-item {
-            width: 95%;
+            &.form-type-textarea, &.form-item-privacy-agreement {
+                width: 95%;
+            }
         }
         input {
             width: 90%;

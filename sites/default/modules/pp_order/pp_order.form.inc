@@ -357,6 +357,12 @@ function _pp_order_finish_fieldset()
         '#title' => t('Poznámky'),
     );
 
+    $fieldset['privacy_agreement'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Souhlasím s <a href="/prohlaseni-o-ochrane-osobnich-udaju" target="_blank">prohlášením o zpracování osobních údajů</a>'),
+        '#required' => TRUE
+    );
+
     $fieldset['submit'] = array(
         '#type' => 'submit',
         '#value' => t('Odeslat'),
@@ -385,9 +391,7 @@ function pp_order_form_more_ajax_callback($form, $form_state)
  * @param array $form_state
  */
 function pp_order_form_validate($form, &$form_state) {
-    // validace
-    // jedine, co snad jeste musim validovat je kombinace zaveseni / lista
-    // vse ostatni by jiz melo byt validovano kontrolami primo u elementu
+    // validace kombinace zaveseni / lista
     if (
            'lamely' == $form_state['values']['order_type']
         && 'over' == $form_state['values']['attachment']
@@ -396,6 +400,14 @@ function pp_order_form_validate($form, &$form_state) {
         form_set_error(
             'ledge',
             t('Při zavěšení nad otvor nelze použít shrnovací lištu.')
+        );
+    }
+
+    // validace souhlasu se zpracovanim osobnich udaju
+    if (!array_key_exists('privacy_agreement', $form_state['values'])) {
+        form_set_error(
+            'privacy_agreement',
+            t('Pro pokračování je nutný souhlas se zpracováním osobních údajů.')
         );
     }
 }
