@@ -73,3 +73,12 @@ li a.active {
     margin: 10px 10px 60px 380px;
   }
 }
+.product-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.product-gallery > * {
+  margin: 12px;
+}
+/*# sourceMappingURL=extras.css.map */
