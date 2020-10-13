@@ -1,0 +1,6 @@
+name = PP info module
+description = "Info message block"
+package = PP
+core = 7.x
+
+stylesheets[all][] = pp_info.css
