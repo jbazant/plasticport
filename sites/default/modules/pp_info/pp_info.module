@@ -9,7 +9,11 @@ function pp_info_block_info()
     'pp_info' => [
       'info' => t('PP Info box'),
       'cache' => DRUPAL_CACHE_GLOBAL
-    ]
+    ],
+    'pp_quarantine' => [
+      'info' => t('PP quarantine box'),
+      'cache' => DRUPAL_CACHE_GLOBAL
+    ],
   ];
 
   return $blocks;
@@ -34,6 +38,17 @@ function pp_info_block_view($delta = '')
                         </p>
                       </div>',
       ];
+      break;
+
+    case 'pp_quarantine':
+      $block['content'] = [
+        '#markup' => '<div class="info-box info-box--low">
+                        <p class="text">
+                          Dle nařízení vlády ze dne 21.10.2020 je až do odvolání maloobchodní prodej uzavřen.
+                        </p>
+                      </div>',
+      ];
+      break;
   }
 
   return $block;

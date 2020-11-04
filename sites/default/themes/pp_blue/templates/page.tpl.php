@@ -36,7 +36,7 @@ include($theme_path . '/templates/inc/header.php');
     <?php endif; ?>
 
     <?php if ($page['featured']): ?>
-        <div id="featured">
+        <div id="featured" class="container">
             <div class="section clearfix">
                 <?php print render($page['featured']); ?>
             </div>

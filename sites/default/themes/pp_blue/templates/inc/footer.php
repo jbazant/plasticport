@@ -27,7 +27,7 @@
             </div>
             <div class="col--footer">
                 <p><?= l('Mapa stránek', 'sitemap.xml') ?></p>
-                <p><?= l('Ocharana osobních údajů', '/prohlaseni-o-ochrane-osobnich-udaju') ?></p>
+                <p><?= l('Ochrana osobních údajů', '/prohlaseni-o-ochrane-osobnich-udaju') ?></p>
 
                 <p>Copyright &#169; Jaroslav Bažant</p>
             </div>
