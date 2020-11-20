@@ -81,3 +81,7 @@ li a.active {
 .product-gallery > * {
   margin: 4px;
 }
+.l-home-nav__img img {
+  aspect-ratio: 1.49456522;
+  height: auto;
+}
