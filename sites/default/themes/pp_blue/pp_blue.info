@@ -5,7 +5,6 @@ core = 7.x
 
 ; stylesheets
 stylesheets[all][] = css/main.css
-stylesheets[all][] = css/extras.css
 
 ; javascript
 scripts[] = js/vendor/picturefill.min.js
