@@ -45,3 +45,7 @@ xmlrpc.php
 /sites/all/modules/
 /static/
 /google*.html
+
+/todo.md
+
+*/_*.css

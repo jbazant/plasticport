@@ -1,0 +1,145 @@
+
+.l-home-nav {
+  position: relative;
+  z-index: 1
+}
+
+.l-home-nav:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.l-home-nav__item {
+  position: relative;
+  display: block
+}
+
+.l-home-nav__item:hover .l-home-nav__img:before {
+  background-color: rgba(0, 0, 0, 0.3)
+}
+
+.l-home-nav__item:hover .l-home-nav__img img {
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02)
+}
+
+@media only screen and (min-width: 700px) {
+  .l-home-nav__item {
+    float: left;
+    width: 50%
+  }
+}
+
+.l-home-nav__heading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 26px;
+  font-size: 1.625rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 2
+}
+
+.l-home-nav__heading span {
+  position: relative;
+  display: inline-block;
+  padding: 0 35px 0 0
+}
+
+.l-home-nav__heading span:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 25px;
+  height: 26px;
+  background-size: 25px 26px;
+  background-image: url("../img/png/arrow.png")
+}
+
+@media only screen and (min-width: 850px) {
+  .l-home-nav__heading {
+    font-size: 36px;
+    font-size: 2.25rem
+  }
+
+  .l-home-nav__heading span:before {
+    top: 2px
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .l-home-nav__heading {
+    font-size: 52px;
+    font-size: 3.25rem
+  }
+
+  .l-home-nav__heading span {
+    padding: 0 70px 0 0
+  }
+
+  .l-home-nav__heading span:before {
+    top: -3px;
+    width: 49px;
+    height: 51px;
+    background-size: 49px 51px
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .l-home-nav__heading {
+    font-size: 60px;
+    font-size: 3.75rem
+  }
+}
+
+.l-home-nav__img {
+  position: relative;
+  overflow: hidden
+}
+
+.l-home-nav__img:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+  background-color: transparent;
+  z-index: 1
+}
+
+.l-home-nav__img img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease
+}
+
+.l-home-content {
+  padding: 30px 0 60px 0
+}
+
+@media only screen and (min-width: 800px) {
+  .l-home-content {
+    padding: 60px 0 150px 0
+  }
+}

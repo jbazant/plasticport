@@ -1,0 +1,196 @@
+.nav {
+  position: relative;
+  z-index: 99;
+  @media only screen and(min-width: 900px) {
+    float: right;
+    margin: 50px 0 0 0;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    margin: 80px 0 0 0
+  }
+
+  &__list {
+    position: relative;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both
+    }
+  }
+
+  &__item {
+    display: block;
+    font-family: "avenir", Arial, sans-serif;
+    color: #00478d;
+    text-align: center;
+    height: 100%;
+    font-weight: 400;
+
+    & + & {
+      border-top: 1px solid rgba(0, 71, 141, 0.3)
+    }
+
+    @media only screen and (min-width: 900px) {
+      float: left;
+
+      & + & {
+        margin: 0 0 0 45px;
+        border-top: none
+      }
+    }
+
+    @media only screen and (min-width: 1050px) {
+      & + & {
+        margin: 0 0 0 90px
+      }
+    }
+  }
+
+  &__item a {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 20px 0 20px 0;
+    font-weight: 400;
+
+    &:hover {
+      text-decoration: underline
+    }
+
+    @media only screen and (min-width: 900px) {
+      font-weight: 200;
+      padding: 0 0 0 22px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -14px;
+        width: 21px;
+        height: 44px;
+        background-image: url("../img/png/curve.png");
+        background-size: 21px 44px
+      }
+    }
+  }
+
+  &__helper {
+    position: absolute;
+    top: 65px;
+    left: -20px;
+    right: -20px;
+    -webkit-transition: height 350ms ease;
+    transition: height 350ms ease;
+    overflow: hidden;
+    height: 0;
+    background: #fff;
+
+    @media only screen and (min-width: 900px) {
+      float: right;
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
+      max-height: none;
+      overflow: visible
+    }
+  }
+}
+
+.logo {
+  display: block;
+  float: left;
+  background-image: url("../img/png/logo-mobile.png");
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 45px;
+  background-size: 200px 45px;
+
+  @media only screen and (min-width: 1200px) {
+  width: 383px;
+  height: 87px;
+  background-image: url("../img/png/logo.png");
+  background-size: 383px 87px
+}
+
+  & span {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    visibility: hidden
+  }
+
+}
+
+
+
+.menu {
+  position: absolute;
+  top: 11px;
+  right: 0;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px
+  }
+
+  &.js-open &__line {
+    &--top {
+      -webkit-transform: translateX(-1px) translateY(0px) rotate(-45deg);
+      transform: translateX(-1px) translateY(0px) rotate(-45deg)
+    }
+
+    &--bottom {
+      -webkit-transform: translateX(-1px) translateY(1px) rotate(45deg);
+      transform: translateX(-1px) translateY(1px) rotate(45deg)
+    }
+
+    &--middle {
+      opacity: 0;
+      -webkit-transition: .2s;
+      transition: .2s
+    }
+  }
+
+  @media only screen and (min-width: 900px) {
+      display: none
+  }
+
+  &__line {
+    -webkit-transition: all 250ms ease-in;
+    transition: all 250ms ease-in;
+    -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+    transform: translateX(0) translateY(0) rotate(0deg);
+
+    &--top {
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%
+    }
+
+    &--middle {
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%
+    }
+
+    &--bottom {
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%
+    }
+
+    @-moz-document url-prefix() {
+      &--top {
+        transform-origin: 100% 0
+      }
+      &--bottom {
+        transform-origin: 100% 100%
+      }
+    }
+  }
+}

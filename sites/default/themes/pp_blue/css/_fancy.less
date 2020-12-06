@@ -1,0 +1,58 @@
+@import "_colors";
+
+.info-strip {
+  position: relative;
+  background-color: #368dfe;
+
+  @media only screen and(min-width: 1200px) {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 1155px;
+      background-image: url("../img/stripe.jpg");
+      background-repeat: no-repeat;
+      background-position: 100% 0;
+      z-index: 2
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 47px;
+      background-color: @primary_color;
+      z-index: 1
+    }
+  }
+
+  &__top {
+    position: relative;
+    z-index: 2
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 2;
+    height: 47px;
+    background-color: #0c4af5;
+
+    & .container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 100%
+    }
+
+    @media only screen and (min-width: 1200px) {
+        background-color: initial
+    }
+  }
+}
