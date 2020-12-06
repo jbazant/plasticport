@@ -38,16 +38,17 @@
   &--footer {
     width: 100%;
     padding: 0 10px 0 10px;
-    margin: 0 0 25px 0
+    margin: 0 0 25px 0;
+
+    @media only screen and (min-width: 550px) {
+      float: left;
+      width: 50%
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 25%;
+      margin: 0
+    }
   }
 
-  @media only screen and (min-width: 550px) {
-    float: left;
-    width: 50%
-  }
-
-  @media only screen and (min-width: 1200px) {
-    width: 25%;
-    margin: 0
-  }
 }
