@@ -1,0 +1,35 @@
+.breadcrumbs {
+  color: #fff;
+  font-weight: 400;
+
+  & li {
+    display: inline-block;
+    position: relative
+  }
+
+  & li + li {
+    padding: 0 0 0 25px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 12px;
+      height: 12px;
+      background-image: url("../img/png/arrow-small.png");
+      background-size: 12px 12px;
+      background-repeat: no-repeat;
+
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+        background-image: url("../img/png/arrow-small-2x.png")
+      }
+    }
+  }
+
+  & a:hover {
+    text-decoration: underline
+  }
+}
+
+

@@ -42,8 +42,10 @@ include($theme_path . '/templates/inc/header.php');
             </div>
         </div> <!-- /.section, /#featured -->
     <?php endif; ?>
+
     <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
     <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+
     <?php print render($page['content']); ?>
     <?php print render($page['footer']); ?>
 </main>

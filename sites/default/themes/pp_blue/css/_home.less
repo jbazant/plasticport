@@ -1,3 +1,4 @@
+@import "./_colors";
 
 .l-home-nav {
   position: relative;
@@ -74,7 +75,6 @@
 
 @media only screen and (min-width: 850px) {
   .l-home-nav__heading {
-    font-size: 36px;
     font-size: 2.25rem
   }
 
@@ -85,7 +85,6 @@
 
 @media only screen and (min-width: 1200px) {
   .l-home-nav__heading {
-    font-size: 52px;
     font-size: 3.25rem
   }
 
@@ -103,7 +102,6 @@
 
 @media only screen and (min-width: 1300px) {
   .l-home-nav__heading {
-    font-size: 60px;
     font-size: 3.75rem
   }
 }
@@ -141,5 +139,149 @@
 @media only screen and (min-width: 800px) {
   .l-home-content {
     padding: 60px 0 150px 0
+  }
+}
+
+.home-card {
+  .container {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media only screen and (min-width: 700px) {
+      padding: 0 10px;
+    }
+    @media only screen and (min-width: 1450px) {
+      padding: 0 20px
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media only screen and (min-width: 700px) {
+      width: 50%
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 33.33%;
+    }
+  }
+
+  &__wrap {
+    padding: 10px;
+  }
+
+  &__top {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      transition: all 700ms ease;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: all 350ms ease;
+      background-color: transparent;
+      z-index: 1
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+  }
+
+  &__heading {
+    color: #fff;
+    font-size: 1.625rem;
+    line-height: 1;
+    font-weight: 700;
+    padding: 0 12px;
+
+    @media only screen and (min-width: 800px) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__swing-up {
+    overflow-y: hidden;
+    height: 0;
+    margin: 12px 12px 0;
+    transition: all 500ms ease;
+    background: linear-gradient(to right, #fff 0%, #a6b0c8 100%);
+
+    p {
+      margin: 24px 12px 6px 34px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: -4px;
+        width: 12px;
+        height: 24px;
+        background-image: url("../img/png/curve.png");
+        background-size: 12px 24px
+      }
+    }
+  }
+
+  &__col:hover &__top {
+    &:before {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    img {
+      transform: scale(1.02);
+    }
+  }
+
+  &__col:hover &__swing-up {
+    height: 100px;
+  }
+}
+
+.l-home-content {
+  .block-title, .home-about h2 {
+    font-size: 1.625rem;
+    color: @primary_text;
+    line-height: 1.1;
+    font-weight: normal;
+    border-bottom: 1px solid @secondary_color;
+    margin: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+
+    @media only screen and (min-width: 800px) {
+      font-size: 2.25rem;
+      margin: 50px 20px 20px;
+    }
+  }
+}
+
+.home-about p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 20px;
+  line-height: 1.6;
+
+  @media only screen and (min-width: 800px) {
+    margin: 20px 50px;
   }
 }

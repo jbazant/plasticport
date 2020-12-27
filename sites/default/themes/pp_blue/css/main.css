@@ -735,7 +735,6 @@ picture {
 }
 @media only screen and (min-width: 850px) {
   .l-home-nav__heading {
-    font-size: 36px;
     font-size: 2.25rem;
   }
   .l-home-nav__heading span:before {
@@ -744,7 +743,6 @@ picture {
 }
 @media only screen and (min-width: 1200px) {
   .l-home-nav__heading {
-    font-size: 52px;
     font-size: 3.25rem;
   }
   .l-home-nav__heading span {
@@ -759,7 +757,6 @@ picture {
 }
 @media only screen and (min-width: 1300px) {
   .l-home-nav__heading {
-    font-size: 60px;
     font-size: 3.75rem;
   }
 }
@@ -792,6 +789,137 @@ picture {
 @media only screen and (min-width: 800px) {
   .l-home-content {
     padding: 60px 0 150px 0;
+  }
+}
+.home-card .container {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 700px) {
+  .home-card .container {
+    padding: 0 10px;
+  }
+}
+@media only screen and (min-width: 1450px) {
+  .home-card .container {
+    padding: 0 20px;
+  }
+}
+.home-card__col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media only screen and (min-width: 700px) {
+  .home-card__col {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .home-card__col {
+    width: 33.33%;
+  }
+}
+.home-card__wrap {
+  padding: 10px;
+}
+.home-card__top {
+  position: relative;
+  overflow: hidden;
+}
+.home-card__top img {
+  width: 100%;
+  object-fit: cover;
+  transition: all 700ms ease;
+}
+.home-card__top:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all 350ms ease;
+  background-color: transparent;
+  z-index: 1;
+}
+.home-card__inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.home-card__heading {
+  color: #fff;
+  font-size: 1.625rem;
+  line-height: 1;
+  font-weight: 700;
+  padding: 0 12px;
+}
+@media only screen and (min-width: 800px) {
+  .home-card__heading {
+    font-size: 2.25rem;
+  }
+}
+.home-card__swing-up {
+  overflow-y: hidden;
+  height: 0;
+  margin: 12px 12px 0;
+  transition: all 500ms ease;
+  background: linear-gradient(to right, #fff 0%, #a6b0c8 100%);
+}
+.home-card__swing-up p {
+  margin: 24px 12px 6px 34px;
+  position: relative;
+}
+.home-card__swing-up p:before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: -4px;
+  width: 12px;
+  height: 24px;
+  background-image: url("../img/png/curve.png");
+  background-size: 12px 24px;
+}
+.home-card__col:hover .home-card__top:before {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.home-card__col:hover .home-card__top img {
+  transform: scale(1.02);
+}
+.home-card__col:hover .home-card__swing-up {
+  height: 100px;
+}
+.l-home-content .block-title,
+.l-home-content .home-about h2 {
+  font-size: 1.625rem;
+  color: #00478d;
+  line-height: 1.1;
+  font-weight: normal;
+  border-bottom: 1px solid #ae003c;
+  margin: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+@media only screen and (min-width: 800px) {
+  .l-home-content .block-title,
+  .l-home-content .home-about h2 {
+    font-size: 2.25rem;
+    margin: 50px 20px 20px;
+  }
+}
+.home-about p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 20px;
+  line-height: 1.6;
+}
+@media only screen and (min-width: 800px) {
+  .home-about p {
+    margin: 20px 50px;
   }
 }
 .breadcrumbs {
