@@ -784,7 +784,7 @@ picture {
   transition: all 700ms ease;
 }
 .l-home-content {
-  padding: 30px 0 60px 0;
+  padding: 60px 0;
 }
 @media only screen and (min-width: 800px) {
   .l-home-content {
@@ -893,6 +893,9 @@ picture {
 .home-card__col:hover .home-card__swing-up {
   height: 100px;
 }
+.l-home-content__v2 {
+  padding-top: 0;
+}
 .l-home-content .block-title,
 .l-home-content .home-about h2 {
   font-size: 1.625rem;
@@ -900,7 +903,7 @@ picture {
   line-height: 1.1;
   font-weight: normal;
   border-bottom: 1px solid #ae003c;
-  margin: 10px;
+  margin: 50px 10px 10px;
   padding-bottom: 10px;
   text-align: center;
 }
@@ -1364,11 +1367,6 @@ li a.active {
 }
 .product-card__content a:hover {
   text-decoration: underline;
-}
-@media only screen and (min-width: 800px) {
-  .l-home-content {
-    padding: 60px 0;
-  }
 }
 @media only screen and (min-width: 900px) {
   .l-header {
