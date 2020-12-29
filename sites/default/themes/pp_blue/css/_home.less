@@ -38,7 +38,6 @@
   left: 0;
   bottom: 0;
   right: 0;
-  font-size: 26px;
   font-size: 1.625rem;
   line-height: 1;
   color: #fff;
@@ -211,7 +210,8 @@
     font-size: 1.625rem;
     line-height: 1;
     font-weight: 700;
-    padding: 0 12px;
+    padding: 0 12px 50px;
+    transition: all 500ms ease;
 
     @media only screen and (min-width: 800px) {
       font-size: 2.25rem;
@@ -242,18 +242,25 @@
     }
   }
 
-  &__col:hover &__top {
-    &:before {
-      background-color: rgba(0, 0, 0, 0.3);
+
+  &__col:hover {
+    .home-card__top {
+      &:before {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      img {
+        transform: scale(1.02);
+      }
     }
 
-    img {
-      transform: scale(1.02);
+    .home-card__heading {
+      padding-bottom: 0;
     }
-  }
 
-  &__col:hover &__swing-up {
-    height: 100px;
+    .home-card__swing-up {
+      height: 100px;
+    }
   }
 }
 

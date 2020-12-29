@@ -3,133 +3,62 @@
 /**
  * Defines hook_block_info
  */
-function pp_base_block_info()
-{
-  $blocks = array(
-    'pp_contact_address' => array(
-      'info' => t('Plasticport contact address footer'),
+function pp_base_block_info() {
+  $blocks = [
+    'pp_products' => [
+      'info' => t('Produkty'),
       'cache' => DRUPAL_CACHE_GLOBAL
-    ),
-
-    'pp_shop_address' => array(
-      'info' => t('Plasticport shop address footer'),
-      'cache' => DRUPAL_CACHE_GLOBAL
-    ),
-
-    'pp_contact_phone' => array(
-      'info' => t('Plasticport contact tel. and mobile footer'),
-      'cache' => DRUPAL_CACHE_GLOBAL
-    ),
-
-    'pp_contact_copy' => array(
-      'info' => t('Plasticport copyright'),
-      'cache' => DRUPAL_CACHE_GLOBAL
-    ),
-
-    'pp_homepage_slideshow' => array(
-      'info' => t('PP Homepage slideshow'),
-      'cache' => DRUPAL_CACHE_GLOBAL
-    ),
-
-    'pp_fb_like_simple' => array(
-      'info' => t('PP FB like'),
-      'cache' => DRUPAL_CACHE_GLOBAL
-    )
-  );
+    ]
+  ];
 
   return $blocks;
 }
 
 
-function pp_base_block_view($delta = '')
-{
-  $block = array();
+function pp_base_block_view($delta = '') {
+  $block = [];
 
   switch ($delta) {
-    case 'pp_contact_address':
-      $block['content'] = array(
-        '#markup' => '<p><strong>Fakturační údaje:</strong><br />Jaroslav Bažant,<br />Tyršova 1157/52,<br />419 01 Duchcov</p>',
-      );
-      break;
-
-    case 'pp_shop_address':
-      $block['content'] = array(
-        '#markup' => '<p><strong>Prodejna:</strong><br />Spojenecká ul. 764,<br />415 01 Teplice<br />(u Intersparu, vjezd pod Okna Sulko)</p>',
-      );
-      break;
-
-    case 'pp_contact_phone':
-      $block['content'] = array(
-        '#markup' => spamspan('
-<div class="h-card">
-    <div class="p-name">Jaroslav Bažant</div>
-    <div><strong>Telefon:</strong> <span class="p-tel">+420 731 566 609</span></div>
-    <div><strong>Email:</strong> <span class="spamspan"><span class="u">info</span> [at] <span class="d">plasticport [dot] cz</span></div>
-</div>
-'),
-      );
-//            <p><strong>Email:</strong> <span class="spamspan"><span class="u">info</span> [at] <span class="d">plasticport [dot] cz</span></span>
-      break;
-
-    case 'pp_fb_like_simple':
-      $block['content'] = array(
-        '#markup' => '<div class="fb-like" data-href="http://www.plasticport.cz" data-send="true" data-width="450" data-show-faces="true" data-colorscheme="dark"></div>',
-      );
-      break;
-
-
-    case 'pp_contact_copy':
-      $block['content'] = array(
-
-        'sitemap' => array(
-          '#prefix' => '<p>',
-          '#suffix' => '</p>',
-          '#theme' => 'link',
-          '#text' => 'mapa stránek',
-          '#path' => 'sitemap.xml',
-          '#options' => array(
-            'attributes' => array('title' => 'sitemap.xml'),
-            'html' => FALSE
-          ),
-        ),
-
-        'copy' => array(
-          '#markup' => '<p>Copyright &copy; Jaroslav Bažant</p>',
-        ),
-      );
-      break;
-
-    case 'pp_homepage_slideshow':
-      //todo data nacist z nejakeho content type
-      $block['content'] = array(
-        '#theme' => 'pp_slideshow',
-        '#items' => array(
-          array(
-            'heading' => 'Lamelové clony',
-            'description' => '',
-            'target' => 'produkty/pvc/lamelove_clony'
-          ),
-          array(
-            'heading' => 'Fólie',
-            'description' => '',
-            'target' => 'produkty/folie'
-          ),
-          array(
-            'heading' => 'Deskové materiály',
-            'description' => '',
-            'target' => 'produkty/deskove_materialy'
-          ),
-          array(
-            'heading' => 'Zakázková výroba',
-            'description' => '',
-            'target' => 'zakazkova-vyroba',
-          ),
-
-        ),
-        '#slideshow_class' => 'homepage_slides'
-      );
+    case 'pp_products':
+      $block['content'] = [
+        '#theme' => 'pp_products',
+        '#items' => [
+          [
+            'title' => 'Deskové materiály',
+            'description' => ['Polykarbonátové desky plné i komůrkové, plexisklo, technické plasty a další typy materiálů.'],
+            'path' => 'produkty/deskove_materialy',
+            'img' => '/sites/default/files/products-01-2x.jpg'
+          ],
+          [
+            'title' => 'PVC',
+            'description' => ['Lamelové clony', 'Kyvná vrata'],
+            'path' => 'produkty/pvc',
+            'img' => '/sites/default/files/products-02-2x.jpg'
+          ],
+          [
+            'title' => 'Lepidla',
+            'description' => ['Dvojsložková lepidla vhodná pro průmyslové použití.'],
+            'path' => 'produkty/lepidla',
+            'img' => '/sites/default/files/lepidla_0.jpg'
+          ],
+        ],
+      ];
       break;
   }
 
   return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function pp_base_theme($existing, $type, $theme, $path) {
+  return [
+    'pp_products' => [
+      'template' => 'templates/pp_products',
+      'variables' => [
+        'items' => []
+      ]
+    ]
+  ];
 }

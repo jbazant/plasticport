@@ -701,7 +701,6 @@ picture {
   left: 0;
   bottom: 0;
   right: 0;
-  font-size: 26px;
   font-size: 1.625rem;
   line-height: 1;
   color: #fff;
@@ -856,7 +855,8 @@ picture {
   font-size: 1.625rem;
   line-height: 1;
   font-weight: 700;
-  padding: 0 12px;
+  padding: 0 12px 50px;
+  transition: all 500ms ease;
 }
 @media only screen and (min-width: 800px) {
   .home-card__heading {
@@ -889,6 +889,9 @@ picture {
 }
 .home-card__col:hover .home-card__top img {
   transform: scale(1.02);
+}
+.home-card__col:hover .home-card__heading {
+  padding-bottom: 0;
 }
 .home-card__col:hover .home-card__swing-up {
   height: 100px;
@@ -1359,9 +1362,6 @@ section.l-detail a:hover {
 .fancy-box a {
   text-decoration: underline;
 }
-li a.active {
-  color: #ae003c;
-}
 .product-card__img img {
   position: relative;
 }
@@ -1394,7 +1394,7 @@ li a.active {
 .call-to-action p {
   margin: 10px;
   color: #00478D;
-  -webkit-font-smoothing: auto;
+  -webkit-font-smoothing: antialiased;
 }
 .call-to-action a {
   text-decoration: underline;
