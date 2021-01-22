@@ -493,7 +493,7 @@ function pp_order_form_submit($form, &$form_state) {
         if (empty($counted_data['construction_price'])) {
             $counted_data['is_valid'] = FALSE;
         }
-        
+
         $template_data = array(
             'form' => $form_state['values'],
             'price' => $counted_data,
@@ -578,14 +578,17 @@ function _pp_order_count_lamels_data_v1($height, $width, $type, $heating)
 
     // zjistim cenu lamely a vypocitam koncovou cenu
     $const_name = 'pp_order_v1_lamela_' . $lamel_type;
+    $margin_const_name = 'pp_order_v1_marze_lamela_' . $lamel_type;
     if ('freez' == $heating) {
         $const_name .= '_mrazirenska';
+        $margin_const_name .= '_mrazirenska';
     }
 
+    $lamel_margin = variable_get($margin_const_name, 0) * $lamel_count;
     $lamel_price = $lamel_lenght_total * variable_get($const_name, 0) / 100;
     $ledge_price = variable_get('pp_order_lista_zaklad') * $real_width / 100;
 
-    $final_price = $lamel_price + $ledge_price;
+    $final_price = $lamel_price + $ledge_price + $lamel_margin;
 
     return array(
         'counted_height' => $real_height,
@@ -594,6 +597,7 @@ function _pp_order_count_lamels_data_v1($height, $width, $type, $heating)
         'lamel_cover' => $lamel_cover,
         'lamel_price' => $lamel_price,
         'ledge_price' => $ledge_price,
+        'lamel_margin' => $lamel_margin,
         'final_price' => ceil($final_price / 10) * 10,
         'is_valid' => $lamel_price > 0 && $ledge_price > 0,
         'lamel_count' => $lamel_count,

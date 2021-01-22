@@ -10,6 +10,9 @@ function pp_order_install() {
     variable_set('pp_order_v1_lamela_300', 145);
     variable_set('pp_order_v1_lamela_400', 245);
     variable_set('pp_order_lista_zaklad', 800);
+    variable_set('pp_order_v1_marze_lamela_200', 20);
+    variable_set('pp_order_v1_marze_lamela_300', 30);
+    variable_set('pp_order_v1_marze_lamela_400', 40);
 
     // predsunuta + posuvna a shrnovaci
     variable_set('pp_order_predsunuta_stojna', 350);
@@ -32,6 +35,9 @@ function pp_order_install() {
     variable_set('pp_order_v1_lamela_300_mrazirenska', 200);
     variable_set('pp_order_v1_lamela_400_mrazirenska', 300);
     variable_set('pp_order_v2_lamely_mrazirenske', 1.1);
+    variable_set('pp_order_v1_marze_lamela_200_mrazirenska', 20);
+    variable_set('pp_order_v1_marze_lamela_300_mrazirenska', 30);
+    variable_set('pp_order_v1_marze_lamela_400_mrazirenska', 40);
 
     // montaz a doprava
     variable_set('pp_order_montaz_pod_5m', 2490);
@@ -49,8 +55,11 @@ function pp_order_uninstall() {
     variable_del('pp_order_v1_lamela_300');
     variable_del('pp_order_v1_lamela_400');
     variable_del('pp_order_lista_zaklad');
+    variable_del('pp_order_v1_marze_lamela_200');
+    variable_del('pp_order_v1_marze_lamela_300');
+    variable_del('pp_order_v1_marze_lamela_400');
 
-    // predsunuta + posuvna a shrnovaci
+  // predsunuta + posuvna a shrnovaci
     variable_del('pp_order_predsunuta_stojna');
     variable_del('pp_order_v2_marze_male');
     variable_del('pp_order_v2_marze_velke');
@@ -71,6 +80,9 @@ function pp_order_uninstall() {
     variable_del('pp_order_v1_lamela_300_mrazirenska');
     variable_del('pp_order_v1_lamela_400_mrazirenska');
     variable_del('pp_order_v2_lamely_mrazirenske');
+    variable_del('pp_order_v1_marze_lamela_200_mrazirenska');
+    variable_del('pp_order_v1_marze_lamela_300_mrazirenska');
+    variable_del('pp_order_v1_marze_lamela_400_mrazirenska');
 
     // montaz a doprava
     variable_del('pp_order_montaz_pod_5m');
@@ -90,4 +102,16 @@ function pp_order_update_7201() {
     variable_set('pp_order_montaz_pod_5m', 2490);
     variable_set('pp_order_montaz_nad_5m', 3490);
     variable_set('pp_order_doprava', 10);
+}
+
+/**
+ * Add constants for margins per lamel count.
+ */
+function pp_order_update_7202() {
+    variable_set('pp_order_v1_marze_lamela_200', 20);
+    variable_set('pp_order_v1_marze_lamela_300', 30);
+    variable_set('pp_order_v1_marze_lamela_400', 40);
+    variable_set('pp_order_v1_marze_lamela_200_mrazirenska', 20);
+    variable_set('pp_order_v1_marze_lamela_300_mrazirenska', 30);
+    variable_set('pp_order_v1_marze_lamela_400_mrazirenska', 40);
 }

@@ -23,6 +23,13 @@ function pp_order_admin_do_otvoru($form, $form_state) {
         '#description' => t('Cena jednoho běžného metru lamely 200/2. [Kč/m]'),
     );
 
+    $form['standard']['pp_order_v1_marze_lamela_200'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Marže lamely 200/2'),
+        '#default_value' => variable_get('pp_order_v1_marze_lamela_200'),
+        '#description' => t('Marže u lamely 200/2 za jeden kus. [Kč/ks]'),
+    );
+
     $form['standard']['pp_order_v1_lamela_300'] = array(
         '#type' => 'textfield',
         '#title' => t('Cena lamely 300/3'),
@@ -30,11 +37,26 @@ function pp_order_admin_do_otvoru($form, $form_state) {
         '#description' => t('Cena jednoho běžného metru lamely 300/3. [Kč/m]'),
     );
 
-    $form['standard']['pp_order_v1_lamela_400'] = array(
+    $form['standard']['pp_order_v1_marze_lamela_300'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Marže lamely 300/3'),
+        '#default_value' => variable_get('pp_order_v1_marze_lamela_300'),
+        '#description' => t('Marže u lamely 300/3 za jeden kus. [Kč/ks]'),
+    );
+
+   $form['standard']['pp_order_v1_lamela_400'] = array(
         '#type' => 'textfield',
         '#title' => t('Cena lamely 400/4'),
         '#default_value' => variable_get('pp_order_v1_lamela_400'),
         '#description' => t('Cena jednoho běžného metru lamely 400/4. [Kč/m]'),
+    );
+
+
+    $form['standard']['pp_order_v1_marze_lamela_400'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Marže lamely 400/4'),
+        '#default_value' => variable_get('pp_order_v1_marze_lamela_400'),
+        '#description' => t('Marže u lamely 400/4 za jeden kus. [Kč/ks]'),
     );
 
     $form['mrazirenske'] = array(
@@ -50,6 +72,13 @@ function pp_order_admin_do_otvoru($form, $form_state) {
         '#description' => t('Cena jednoho běžného metru mrazírenské lamely 200/2. [Kč/m]'),
     );
 
+    $form['mrazirenske']['pp_order_v1_marze_lamela_200_mrazirenska'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Marže lamely 200/2'),
+        '#default_value' => variable_get('pp_order_v1_marze_lamela_200_mrazirenska'),
+        '#description' => t('Marže u mrazírenské lamely 200/2 za jeden kus. [Kč/ks]'),
+    );
+
     $form['mrazirenske']['pp_order_v1_lamela_300_mrazirenska'] = array(
         '#type' => 'textfield',
         '#title' => t('Cena lamely 300/3'),
@@ -57,11 +86,27 @@ function pp_order_admin_do_otvoru($form, $form_state) {
         '#description' => t('Cena jednoho běžného metru mrazírenské lamely 300/3. [Kč/m]'),
     );
 
+
+    $form['mrazirenske']['pp_order_v1_marze_lamela_300_mrazirenska'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Marže lamely 300/3'),
+        '#default_value' => variable_get('pp_order_v1_marze_lamela_300_mrazirenska'),
+        '#description' => t('Marže u mrazírenské lamely 300/3 za jeden kus. [Kč/ks]'),
+    );
+
     $form['mrazirenske']['pp_order_v1_lamela_400_mrazirenska'] = array(
         '#type' => 'textfield',
         '#title' => t('Cena lamely 400/4'),
         '#default_value' => variable_get('pp_order_v1_lamela_400_mrazirenska'),
         '#description' => t('Cena jednoho běžného metru mrazírenské lamely 400/4. [Kč/m]'),
+    );
+
+
+    $form['mrazirenske']['pp_order_v1_marze_lamela_400_mrazirenska'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Marže lamely 400/4'),
+        '#default_value' => variable_get('pp_order_v1_marze_lamela_400_mrazirenska'),
+        '#description' => t('Marže u mrazírenské lamely 400/4 za jeden kus. [Kč/ks]'),
     );
 
     return system_settings_form($form);
