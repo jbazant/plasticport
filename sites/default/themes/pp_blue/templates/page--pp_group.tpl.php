@@ -1,25 +1,32 @@
 <?php
-/**
- * Todo Rename this to page--front when the time comes
- * Created by PhpStorm.
- * User: jiri.bazant
- * Date: 27.12.20
- * Time: 23:20
- */
 $theme_path = drupal_get_path('theme', 'pp_blue');
 
 include($theme_path . '/templates/inc/header.php');
 ?>
 
 <main id="content">
-  <h1 class="heading--hp">Brána do světa plastů</h1>
+
+  <div class="info-strip">
+    <div class="info-strip__top">
+      <div class="container">
+        <h1 class="info-strip__heading">
+          <?php print $title; ?>
+        </h1>
+      </div>
+    </div>
+    <?php if ($breadcrumb): ?>
+      <div class="info-strip__bottom">
+        <div class="container"><?php print $breadcrumb; ?></div>
+      </div>
+    <?php endif; ?>
+  </div>
 
   <?php if ($messages): ?>
     <div id="messages">
       <div class="section clearfix">
         <?php print $messages; ?>
       </div>
-    </div>
+    </div> <!-- /.section, /#messages -->
   <?php endif; ?>
 
   <?php if ($page['featured']): ?>
@@ -27,18 +34,16 @@ include($theme_path . '/templates/inc/header.php');
       <div class="section clearfix">
         <?php print render($page['featured']); ?>
       </div>
-    </div>
+    </div> <!-- /.section, /#featured -->
   <?php endif; ?>
 
   <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
   <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 
-  <section class="l-home-content l-home-content__v2">
-    <div class="container">
-      <?php print render($page['content']); ?>
-    </div>
-  </section>
-
+  <?php print render($page['content']); ?>
+  <div class="groups-section">
+    <?php print render($page['groups']); ?>
+  </div>
   <?php print render($page['footer']); ?>
 </main>
 

@@ -14,3 +14,4 @@ scripts[] = js/main.js
 regions[content] = Content
 regions[featured] = Featured
 regions[footer] = Footer
+regions[groups] = Groups

@@ -57,3 +57,13 @@ function pp_blue_preprocess_links(&$variables)
         $variables['links'] = $newitems;
     }
 }
+
+/**
+ * Implements HOOK_Preprocess_page
+ * @param $vars
+ */
+function pp_blue_preprocess_page(&$vars) {
+  if (isset($vars['node']->type)) {
+    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+  }
+}
