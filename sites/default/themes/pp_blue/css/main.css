@@ -1020,6 +1020,7 @@ picture {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  aspect-ratio: 1;
 }
 @media only screen and (min-width: 550px) {
   .product-card__img {
@@ -1030,8 +1031,6 @@ picture {
 .product-card__content {
   position: relative;
   padding: 30px 30px 20px 35px;
-  background: -webkit-linear-gradient(-45deg, #fff 14%, #eeeef3 43%, #a3acc3 100%);
-  background: -webkit-linear-gradient(315deg, #fff 14%, #eeeef3 43%, #a3acc3 100%);
   background: linear-gradient(135deg, #fff 14%, #eeeef3 43%, #a3acc3 100%);
   z-index: 2;
 }
