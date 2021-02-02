@@ -1326,6 +1326,37 @@ picture {
 .l-products__list a:hover {
   text-decoration: underline;
 }
+.l-list {
+  padding: 30px 0 40px 0;
+}
+@media only screen and (min-width: 1250px) {
+  .l-list {
+    padding: 55px 0 70px 0;
+  }
+}
+.l-list .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.l-list .container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.l-list__col {
+  width: 100%;
+}
+@media only screen and (min-width: 1250px) {
+  .l-list__col {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 section.l-detail a {
   color: #ae003c;
   text-decoration: underline;
