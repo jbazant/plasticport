@@ -1,0 +1,108 @@
+.l-detail {
+  padding: 20px 0 40px 0;
+
+  h3 + p, h2 + ul {
+    padding: 13px 0 0 0
+  }
+
+  h3 + ul {
+    padding: 15px 0 0 0
+  }
+
+  h2 + p, h2 + ul, h2 + h3 {
+    padding: 20px 0 0 0
+  }
+
+  p, ul {
+    margin: 0 0 25px 0
+  }
+
+  .container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @media only screen and (min-width: 800px) {
+    padding: 55px 0 40px 0;
+
+    h2 {
+      padding: 30px 0 0 0
+    }
+
+    h2 + p, h2 + ul, h2 + h3 {
+      padding: 50px 0 0 0
+    }
+  }
+
+
+  &__aside {
+    @media only screen and (min-width: 800px) {
+      float: left;
+      width: 330px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 40px 70px 40px 0;
+        border-color: transparent #fff transparent transparent
+      }
+    }
+  }
+
+  &__content {
+    padding: 30px 0 0 0;
+
+    @media only screen and (min-width: 800px) {
+      float: left;
+      width: calc(100% - 330px);
+      padding: 0 50px 0 45px
+    }
+  }
+
+
+  @media only screen and (min-width: 800px) {
+    &__heading {
+      -webkit-transform: translateX(-60px);
+      transform: translateX(-60px)
+    }
+  }
+
+  &, &__list {
+    //font-weight: 600;
+
+    li {
+      padding: 0 0 0 20px;
+      position: relative
+    }
+
+    li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      background-image: url("../img/png/arrow-red.png");
+      background-size: 12px 12px;
+      background-repeat: no-repeat
+    }
+
+    li + li {
+      margin: 10px 0 0 0
+    }
+  }
+
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    &__list li:before {
+      background-image: url("../img/png/arrow-red-2x.png")
+    }
+  }
+}
