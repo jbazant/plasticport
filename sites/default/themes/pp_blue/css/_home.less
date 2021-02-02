@@ -286,13 +286,21 @@
   }
 }
 
-.home-about p {
-  text-align: center;
-  font-size: 1.2rem;
-  margin: 20px;
-  line-height: 1.6;
+.home-about {
+  p&--motto {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.6;
+    margin: 50px;
+    padding: 0;
+  }
 
-  @media only screen and (min-width: 800px) {
-    margin: 20px 50px;
+  .row {
+    margin: 20px;
+  }
+
+  .google_maps {
+    padding: 0;
   }
 }
