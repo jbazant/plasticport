@@ -240,6 +240,11 @@ ul {
 li {
   list-style: none;
 }
+.no-vis {
+  visibility: hidden;
+  height: 1px;
+  width: 1px;
+}
 .container {
   max-width: 1450px;
   margin: 0 auto;
@@ -346,6 +351,9 @@ picture {
   outline: none;
   border: 0;
 }
+li a.active {
+  color: #ae003c;
+}
 .nav {
   position: relative;
   z-index: 99;
@@ -441,6 +449,9 @@ picture {
     max-height: none;
     overflow: visible;
   }
+}
+.nav li a.active {
+  color: #00478d;
 }
 .logo {
   display: block;
