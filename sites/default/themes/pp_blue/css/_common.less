@@ -47,3 +47,16 @@ li {
   height: 1px;
   width: 1px;
 }
+
+// https://spigotdesign.com/smooth-scroll-offset-anchor-links-with-css
+html {
+  scroll-behavior: smooth;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 200px;
+  margin: -200px 0 0;
+}
+

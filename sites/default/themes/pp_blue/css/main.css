@@ -245,6 +245,15 @@ li {
   height: 1px;
   width: 1px;
 }
+html {
+  scroll-behavior: smooth;
+}
+:target:before {
+  content: "";
+  display: block;
+  height: 200px;
+  margin: -200px 0 0;
+}
 .container {
   max-width: 1450px;
   margin: 0 auto;
