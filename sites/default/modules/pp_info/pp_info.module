@@ -14,6 +14,10 @@ function pp_info_block_info()
       'info' => t('PP quarantine box'),
       'cache' => DRUPAL_CACHE_GLOBAL
     ],
+    'pp_vacation' => [
+      'info' => t('PP vacation box'),
+      'cache' => DRUPAL_CACHE_GLOBAL
+    ],
   ];
 
   return $blocks;
@@ -45,6 +49,16 @@ function pp_info_block_view($delta = '')
         '#markup' => '<div class="info-box info-box--low">
                         <p class="text">
                           Dle nařízení vlády ze dne 21.10.2020 je až do odvolání maloobchodní prodej uzavřen.
+                        </p>
+                      </div>',
+      ];
+      break;
+
+    case 'pp_vacation':
+      $block['content'] = [
+        '#markup' => '<div class="info-box info-box--low">
+                        <p class="text">
+                          Ve dnech 16.8. až 20.8. je prodejna z důvodu dovolené uzavřena.
                         </p>
                       </div>',
       ];
