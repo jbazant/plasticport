@@ -23,7 +23,7 @@
             </div>
             <div class="col--footer">
                 <h3 class="l-footer__heading">Prodejna:</h3>
-                <address>Spojenecká ul. 764, <br>415 01 Teplice, <br>(u OC Albert, vjezd pod Okna Sulko)</address>
+                <address>Spojenecká ul. 764, <br>415 01 Teplice, <br>(u OC Albert, vjezd pod Alza)</address>
             </div>
             <div class="col--footer">
                 <p><?= l('Mapa stránek', 'sitemap.xml') ?></p>
