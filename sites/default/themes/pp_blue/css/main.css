@@ -1433,6 +1433,9 @@ section.l-detail a:hover {
 .product-card__content a:hover {
   text-decoration: underline;
 }
+.fit-width {
+  max-width: 100%;
+}
 @media only screen and (min-width: 900px) {
   .l-header {
     padding: 30px 0;
